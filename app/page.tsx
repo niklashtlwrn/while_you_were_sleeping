@@ -20,7 +20,7 @@ function Picture({ img }: any) {
     return (
         <Image
             alt="Whileyouweresleeping"
-            className="rounded-xl"
+            className="rounded-none"
             src={img}
             width={500}
         />
