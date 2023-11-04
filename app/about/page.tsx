@@ -2,6 +2,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { Spacer } from '@nextui-org/react';
 
 
 export default function About() {
@@ -9,26 +10,26 @@ export default function About() {
 
     useEffect(() => {
         const checkIsMobile = () => {
-          const screenWidth = window.innerWidth;
-          if (screenWidth <= 768) {
-            setIsMobile(true);
-          } else {
-            setIsMobile(false);
-          }
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 768) {
+                setIsMobile(true);
+            } else {
+                setIsMobile(false);
+            }
         };
-    
+
         // Call the function to check for mobile initially and attach it to the resize event
         checkIsMobile();
         window.addEventListener('resize', checkIsMobile);
-    
+
         // Clean up the event listener when the component unmounts
         return () => {
-          window.removeEventListener('resize', checkIsMobile);
+            window.removeEventListener('resize', checkIsMobile);
         };
-      }, []);
+    }, []);
 
     return (
-        <div className={clsx({"max-w-[90%]": isMobile,}, {"max-w-[70%]": !isMobile,})}>
+        <div className={clsx({ "max-w-[90%]": isMobile, }, { "max-w-[70%]": !isMobile, })}>
             <h1 className='font-bold text-4xl mb-5'>Welcome to the official homepage of Andreas Krennbauer</h1>
             <p className='text-large mb-4'>Your gateway to the captivating world of visual art.</p>
             <p className='text-large mb-4'>We are thrilled to present an exquisite exhibition featuring the remarkable talent of Vienna-based artist Christoph Klinger. In this collection, we invite you to embark on a mesmerizing journey through the heart of Vienna, as seen through the lens of &quot;While You Were Sleeping&quot;.</p>
@@ -37,6 +38,12 @@ export default function About() {
             <p className='text-large mb-4'>Each photograph in this series is a testament to Klinger&apos;s dedication and expertise, as he masterfully balances light and shadow, composition and mood, to reveal the true spirit of these buildings and their surroundings. From the majestic silhouette of St. Stephen&apos;s Cathedral to the modern elegance of the Wiener Riesenrad, Klinger&apos;s work captures the city&apos;s history, grandeur, and its vibrant energy.</p>
             <p className='text-large mb-4'>This online exhibition is a celebration of Christoph Klinger&apos;s unique vision and his ability to convey the soul of Vienna through his lens. We invite you to explore this captivating collection, immerse yourself in the beauty of Vienna by night, and appreciate the artistry of &quot;While You Were Sleeping&quot;.</p>
             <p className='text-large mb-10'>Thank you for visiting our website and being a part of this journey into the heart of Vienna. We hope you find inspiration and delight in the remarkable work of Christoph Klinger. Should you have any inquiries or wish to acquire one of these exceptional pieces, please do not hesitate to contact us. Enjoy your exploration of this extraordinary world of visual art.</p>
+            <Spacer y={2} />
+            <h1 className='font-bold text-4xl mb-5'>Imprint</h1>
+            <p className="text-lg">Andreas Krennbauer</p>
+            <p className="text-sm">Humboldtgasse 38/32</p>
+            <p className="text-sm">1100 Wien</p>
+            <Spacer y={10} />
         </div>
     )
 }
