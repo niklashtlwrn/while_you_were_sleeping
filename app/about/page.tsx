@@ -30,7 +30,8 @@ export default function About() {
 
     return (
         <div className={clsx({ "max-w-[90%]": isMobile, }, { "max-w-[70%]": !isMobile, })}>
-            <h1 className='font-bold text-4xl mb-5'>Welcome to the official homepage of Andreas Krennbauer</h1>
+            <h1 className='font-bold text-4xl'>While You were sleeping</h1>
+            <p className='text-md mb-4'>a photseries by Christoph Klinger</p>
             <p className='text-large mb-4'>Your gateway to the captivating world of visual art.</p>
             <p className='text-large mb-4'>We are thrilled to present an exquisite exhibition featuring the remarkable talent of Vienna-based artist Christoph Klinger. In this collection, we invite you to embark on a mesmerizing journey through the heart of Vienna, as seen through the lens of &quot;While You Were Sleeping&quot;.</p>
             <p className='text-large mb-4'>Christoph Klinger, a visionary photographer renowned for his unique perspective, has captured Vienna in a way that is nothing short of magical. This exhibition showcases 12 stunning photographs of the city&apos;s most iconic buildings illuminated under the enchanting cloak of night. Klinger&apos;s masterful artistry is on full display, as he unveils a side of Vienna that few have the privilege to witness.</p>
