@@ -80,9 +80,9 @@ const Header = () => {
                     </div>
 
                     <div className="flex items-center justify-center">
-                        <Link href="/" className="text-2xl font-mono">
-                            While you were sleeping
-                        </Link>
+                            <Link href="/" className={clsx("font-mono", {"text-xl": isMobile,}, {"text-2xl": !isMobile,})}>
+                                While you were sleeping
+                            </Link>
                     </div>
 
                     <div className="flex-1 basis-0 h-full flex items-center justify-end">

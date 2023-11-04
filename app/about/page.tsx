@@ -1,9 +1,34 @@
 'use client';
 import React from 'react';
+import { useEffect, useState } from "react";
+import clsx from "clsx";
+
 
 export default function About() {
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const checkIsMobile = () => {
+          const screenWidth = window.innerWidth;
+          if (screenWidth <= 768) {
+            setIsMobile(true);
+          } else {
+            setIsMobile(false);
+          }
+        };
+    
+        // Call the function to check for mobile initially and attach it to the resize event
+        checkIsMobile();
+        window.addEventListener('resize', checkIsMobile);
+    
+        // Clean up the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('resize', checkIsMobile);
+        };
+      }, []);
+
     return (
-        <div className='max-w-[70%]'>
+        <div className={clsx({"max-w-[90%]": isMobile,}, {"max-w-[70%]": !isMobile,})}>
             <h1 className='font-bold text-4xl mb-5'>Welcome to the official homepage of Andreas Krennbauer</h1>
             <p className='text-large mb-4'>Your gateway to the captivating world of visual art.</p>
             <p className='text-large mb-4'>We are thrilled to present an exquisite exhibition featuring the remarkable talent of Vienna-based artist Christoph Klinger. In this collection, we invite you to embark on a mesmerizing journey through the heart of Vienna, as seen through the lens of &quot;While You Were Sleeping&quot;.</p>

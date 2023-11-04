@@ -29,3 +29,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.group:hover .group-hover\:border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(54, 59, 61 / var(--tw-border-opacity));
+}
